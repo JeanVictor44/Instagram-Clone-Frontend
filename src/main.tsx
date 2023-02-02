@@ -1,10 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import { RouterProvider } from 'react-router-dom';
+import { CustomThemeProvider } from './context/Theme';
+import { router } from './routes';
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    {/* Disponibiliza os temas da aplicação e a função para trocar o tema */}
+    {/* Consumir com o useTheme */}
+    <CustomThemeProvider>
+      <RouterProvider router={router}/>
+    </CustomThemeProvider>
   </React.StrictMode>,
 );
