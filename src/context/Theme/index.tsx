@@ -1,9 +1,10 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
+import { ThemeProvider } from 'styled-components';
 import { light } from '../../styles/themes/light';
 import { Theme } from '../../types/Theme';
 
 interface ThemeContextData {
-    // toggleTheme(): void;
+    toggleTheme(): void;
     theme: Theme
 }
 
@@ -15,20 +16,19 @@ interface CustomThemeProviderProps {
 
 export function CustomThemeProvider({children}: CustomThemeProviderProps){
   const [theme, setTheme] = useState<Theme>(light);
-  //   function toggleTheme(){
-  //     if(theme.name == 'light'){
-  //         setTheme(dark)
-  //     }else {
-  //         setTheme(light)
-  //     }
-  //   }
+  function toggleTheme(){
+      
+  }
   return (
     <ThemeContext.Provider value={{
-      theme
+      theme,
+      toggleTheme
     }} >
-      {
-        children
-      }
+      <ThemeProvider theme={theme}>
+        {
+          children
+        }
+      </ThemeProvider>
     </ThemeContext.Provider>
   );
 }

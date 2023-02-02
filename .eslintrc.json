@@ -25,6 +25,7 @@
             2
         ],
         "react/react-in-jsx-scope":0,
+        "@typescript-eslint/no-empty-function": 0,
         "linebreak-style": [
             "error",
             "unix"
