@@ -1,11 +1,3 @@
-export interface Theme {
-    name: 'light' | 'dark',
-    colors: {
-        white: string,
-        gray: string,
-        dark: string,
-        blue: string,
-        darkBlue: string
-    }
-      
-}
+import { light } from '../styles/themes/light';
+
+export type Theme = typeof light
