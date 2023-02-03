@@ -8,6 +8,7 @@ export const Container = styled.div`
     flex-direction: column;
     padding-top:10px;    
     
+
     > div {
         width: 100%;
         max-width: 340px;
@@ -16,6 +17,9 @@ export const Container = styled.div`
     & > form {
         min-height: 500px;
         width:340px;
+        >div:first-of-type{
+            margin-bottom: 20px;
+        }
         img {
             margin-bottom:20px;
         }
@@ -27,10 +31,9 @@ export const Container = styled.div`
         }
         > p {
             color:${({theme}) => theme.colors.gray};
-            margin: 0 auto;
-            width: 100%;
+            text-align: center;
             font-size:12px;
-            margin:15px;
+            margin-top:15px;
         }
     }
     footer {
