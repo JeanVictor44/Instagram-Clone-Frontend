@@ -8,7 +8,7 @@ export const Container = styled.div `
     align-items: center;
 
     img:nth-child(1){
-        width: 100px;
+        width: 500px;
     }
     img:nth-child(2){
         position: absolute;

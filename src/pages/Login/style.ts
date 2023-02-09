@@ -1,4 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeOutAnimation = keyframes`
+    0%{
+        opacity: 20%;
+    }20% {
+        opacity: 100%;
+    }100% {
+        opacity:0%;
+    }
+`;
 
 export const Container = styled.div `
     background-color: ${({theme}) => theme.colors.white };
@@ -21,6 +31,7 @@ export const LoginBox = styled.form`
     display:flex;
     flex-direction: column;
     padding:40px 40px 15px 40px;
+    background-color: #fff;
     border:${({theme}) => `1px solid ${theme.colors.border}`};
     img {
         width:175px;
@@ -81,6 +92,7 @@ export const RegisterMiniBox = styled.div`
 
     }
 `;
+
 export const PhoneContainer = styled.div`
     position: relative;
     .screenhost{
@@ -88,5 +100,13 @@ export const PhoneContainer = styled.div`
         left:158px;
         top:26px;
     } 
+    .not-visible {
+        display: none;
+    }
+    .visible {
+        display:block;
+        animation:5s ${fadeOutAnimation} ease-out;
+
+    }
 
 `;

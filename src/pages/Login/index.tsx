@@ -2,15 +2,17 @@ import phoneImg from '../../assets/phone.png';
 import logo from '../../assets/logo.svg';
 import appStoreImg from '../../assets/app-store.svg';
 import googlePlayImg from '../../assets/google-play.svg';
+import screenHostLogin1 from '../../assets/screenshost-login-1.png';
+import screenHostLogin2 from '../../assets/screenshost-login-2.png';
+import screenHostLogin3 from '../../assets/screenshost-login-3.png';
+
 import { BoxRight, Container, LoginBox, LoginWrap, PhoneContainer, RegisterMiniBox } from './style';
 import { Footer } from '../../components/Footer';
 import { Link } from 'react-router-dom';
 import { TextInput } from '../../components/UI/TextInput';
 import { Button } from '../../components/UI/Button';
 import { Separate } from '../../components/UI/Separate';
-import screenHostLogin1 from '../../assets/screenshost-login-1.png';
-import screenHostLogin2 from '../../assets/screenshost-login-2.png';
-import screenHostLogin3 from '../../assets/screenshost-login-3.png';
+
 import React, {  useEffect, useState } from 'react';
 import { Loader } from '../../components/Loader';
 import { useForm, FormProvider } from 'react-hook-form';
@@ -18,13 +20,31 @@ import FacebookLogin from 'react-facebook-login';
 
 export function Login(){
   const [isLoading, setIsLoading] = useState(true);
-  
+  const [imagesState, setImagesState] = useState(['visible', 'not-visible', 'not-visible']);
   const form = useForm();
-  
+
   useEffect(() => {
+    console.log('hello');
     setTimeout(() => {
       setIsLoading(false);
-    },1000);
+    },2000);
+
+    const interval = setInterval(() => {
+      setImagesState((oldState) => {
+        const indexVisibleState = oldState.findIndex((state) => state == 'visible');
+        if(indexVisibleState == 0){
+          return ['not-visible', 'visible', 'not-visible'];
+        }else if(indexVisibleState == 1){
+          return ['not-visible', 'not-visible', 'visible'];
+        }else {
+          return ['visible', 'not-visible', 'not-visible'];
+        }
+        
+      });
+    }, 5000);
+
+    // quando o componente é desmotado
+    return () => clearInterval(interval);
   },[]);
   
 
@@ -42,9 +62,9 @@ export function Login(){
       <LoginWrap>
         <PhoneContainer>
           <img src={phoneImg}/>
-          <img src={screenHostLogin1} className='screenhost' id="screenhost1" />
-          <img src={screenHostLogin2} className='screenhost' id="screenhost2" />
-          <img src={screenHostLogin3} className='screenhost' id="screenhost3" />
+          <img src={screenHostLogin1} className={`screenhost ${imagesState[0]}`} />
+          <img src={screenHostLogin2} className={`screenhost ${imagesState[1]}`} />
+          <img src={screenHostLogin3} className={`screenhost ${imagesState[2]}`} />
         </PhoneContainer>
         <BoxRight>
           <FormProvider {...form}>
@@ -66,10 +86,11 @@ export function Login(){
                 fields='name,email,picture'
                 callback={response => console.log(response)}
                 icon="fa-facebook"
+                textButton='Entrar com o Facebook'
                 buttonStyle={{
                   backgroundColor:'transparent',
                   color:'darkslateblue',
-                  fontSize: '14px',
+                  fontSize: '12px',
                   textAlign: 'center',
                   margin:'0 auto',
                   border: 'none',
