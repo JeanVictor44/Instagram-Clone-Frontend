@@ -11,15 +11,14 @@ import { Separate } from '../../components/UI/Separate';
 import screenHostLogin1 from '../../assets/screenshost-login-1.png';
 import screenHostLogin2 from '../../assets/screenshost-login-2.png';
 import screenHostLogin3 from '../../assets/screenshost-login-3.png';
-import React, { Component, useEffect, useRef, useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import { Loader } from '../../components/Loader';
 import { useForm, FormProvider } from 'react-hook-form';
-import FacebookLogin, {ReactFacebookLoginProps, ReactFacebookLoginState} from 'react-facebook-login';
+import FacebookLogin from 'react-facebook-login';
 
 export function Login(){
   const [isLoading, setIsLoading] = useState(true);
-  const facebookButtonRef = useRef< React.LegacyRef<FacebookLogin> | HTMLButtonElement | undefined>();
-
+  
   const form = useForm();
   
   useEffect(() => {
