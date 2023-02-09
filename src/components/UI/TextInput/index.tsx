@@ -1,23 +1,26 @@
-import { InputHTMLAttributes, useState } from 'react';
+import { InputHTMLAttributes } from 'react';
+import { useFormContext } from 'react-hook-form';
 import { Input, Placeholder, Container} from './style';
 
 export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement>{
   type: 'password' | 'text' | 'email',
-  placeholder: string
-  
+  placeholder: string,  
+  name: string
 }
-export function TextInput({type, placeholder,...rest}: TextInputProps){
-  const [text, setText ] = useState('');
+export function TextInput({type, placeholder,name,...rest}: TextInputProps){
+  const { register,watch} = useFormContext();
+  const value = watch(name);
+
   return (
     <Container >
       <Input 
         type={type} 
         {...rest}
-        onChange={(e) => setText(e.target.value)}
-        value={text}
+        {...register(name)}
+        
       />
       <Placeholder 
-        movePlaceholder={Boolean(text)}
+        movePlaceholder={Boolean(value)}
       >
         {placeholder}
       </Placeholder>

@@ -14,6 +14,7 @@ export const Container = styled.div `
 `;
 export const LoginWrap = styled.div `
     display: flex;
+    
 
 `;
 export const LoginBox = styled.form`
@@ -79,4 +80,13 @@ export const RegisterMiniBox = styled.div`
         text-decoration:none;
 
     }
+`;
+export const PhoneContainer = styled.div`
+    position: relative;
+    .screenhost{
+        position:absolute;
+        left:158px;
+        top:26px;
+    } 
+
 `;

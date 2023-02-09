@@ -1,6 +1,7 @@
 
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import App from '../App';
+import { Loader } from '../components/Loader';
 import { Login } from '../pages/Login';
 import { Register } from '../pages/Register';
 
@@ -19,7 +20,7 @@ export const router = createBrowserRouter([
       {
         path:'register',
         element: <Register />
-      }
+      },
     ]
   }, 
   
