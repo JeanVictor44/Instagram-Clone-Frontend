@@ -1,5 +1,15 @@
+import { ListStories } from '../../components/ListStories';
+import { Container, Principal, RightSide } from './style';
+
 export function Feed () {
   return (
-    <h1>Feed</h1>
+    <Container>
+      <Principal>
+        <ListStories />
+
+      </Principal>
+      <RightSide>
+      </RightSide>
+    </Container>
   );
 }

@@ -5,6 +5,8 @@ import searchIcon from '../../assets/icons/search.svg';
 import exploreIcon from '../../assets/icons/explore.svg';
 import reelsIcon from '../../assets/icons/reels.svg';
 import messagesIcon from '../../assets/icons/messenger.svg';
+import heartIcon from '../../assets/icons/heart.svg';
+import createIcon from '../../assets/icons/create.svg';
 
 export function Sidebar (){
   return (
@@ -22,7 +24,7 @@ export function Sidebar (){
         
         <li>
           <Link to="/search">
-            <img src={homeIcon} alt="Search"/>
+            <img src={searchIcon} alt="Search"/>
             <span>Pesquisa</span>
           </Link>
         </li>
@@ -30,7 +32,7 @@ export function Sidebar (){
 
         <li>
           <Link to="/explore">
-            <img src={homeIcon} alt="Feed"/>
+            <img src={exploreIcon} alt="Feed"/>
             <span>Explorar</span>
           </Link>
         
@@ -38,7 +40,7 @@ export function Sidebar (){
         
         <li>
           <Link to="/reels">
-            <img src={homeIcon} alt="Reels"/>
+            <img src={reelsIcon} alt="Reels"/>
             <span>Reels</span>
           </Link>
         
@@ -46,7 +48,7 @@ export function Sidebar (){
 
         <li>
           <Link to="/messages">
-            <img src={homeIcon} alt="Messages"/>
+            <img src={messagesIcon} alt="Messages"/>
             <span>Mensagens</span>
           </Link>
         
@@ -54,7 +56,7 @@ export function Sidebar (){
 
         <li>
           <Link to="/notifications">
-            <img src={homeIcon} alt="Notification"/>
+            <img src={heartIcon} alt="Notification"/>
             <span>Notificações</span>
           </Link>
         
@@ -62,7 +64,7 @@ export function Sidebar (){
 
         <li>
           <Link to="/post/create">
-            <img src={homeIcon} alt="Create post"/>
+            <img src={createIcon} alt="Create post"/>
             <span>Criar</span>
           </Link>
         
