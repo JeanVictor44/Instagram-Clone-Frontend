@@ -1,22 +1,26 @@
 import phoneImg from '../../assets/phone.png';
-import logo from '../../assets/logo.svg';
-import appStoreImg from '../../assets/app-store.svg';
-import googlePlayImg from '../../assets/google-play.svg';
 import screenHostLogin1 from '../../assets/screenshost-login-1.png';
 import screenHostLogin2 from '../../assets/screenshost-login-2.png';
 import screenHostLogin3 from '../../assets/screenshost-login-3.png';
+import logo from '../../assets/logo.svg';
+import appStoreImg from '../../assets/app-store.svg';
+import googlePlayImg from '../../assets/google-play.svg';
 
 import { BoxRight, Container, LoginBox, LoginWrap, PhoneContainer, RegisterMiniBox } from './style';
+
 import { Footer } from '../../components/Footer';
-import { Link } from 'react-router-dom';
 import { TextInput } from '../../components/UI/TextInput';
 import { Button } from '../../components/UI/Button';
 import { Separate } from '../../components/UI/Separate';
-
-import React, {  useEffect, useState } from 'react';
 import { Loader } from '../../components/Loader';
+
+import { Link } from 'react-router-dom';
+
+import { useEffect, useState } from 'react';
+
 import { useForm, FormProvider } from 'react-hook-form';
-import FacebookLogin from 'react-facebook-login';
+
+import ReactFacebookLogin from 'react-facebook-login';
 
 export function Login(){
   const [isLoading, setIsLoading] = useState(true);
@@ -81,7 +85,7 @@ export function Login(){
               />
 
               <Separate />
-              <FacebookLogin 
+              <ReactFacebookLogin 
                 appId='766009061801285'
                 fields='name,email,picture'
                 callback={response => console.log(response)}
@@ -89,9 +93,10 @@ export function Login(){
                 textButton='Entrar com o Facebook'
                 buttonStyle={{
                   backgroundColor:'transparent',
-                  color:'darkslateblue',
-                  fontSize: '12px',
+                  color:'#385185',
+                  fontSize: '14px',
                   textAlign: 'center',
+                  fontWeight:'bolder',
                   margin:'0 auto',
                   border: 'none',
                   display: 'block',

@@ -29,13 +29,21 @@ export function Register(){
             fields='name,email,picture'
             callback={response => console.log(response)}
             icon="fa-facebook"
+            textButton='Entrar com o Facebook'
             buttonStyle={{
-              backgroundColor:'transparent',
-              color:'darkslateblue',
-              fontSize: '14px',
+              backgroundColor:'#0095F6',
+              color:'#fff',
+              fontSize: '12px',
               textAlign: 'center',
-              margin:'0 auto',
-              border: 'none'
+              fontWeight:'bolder',
+              margin:'15px auto',
+              borderRadius:'8px', 
+              border: 'none',
+              display: 'flex',
+              justifyContent:'center',
+              alignItems: 'center',
+              height:'10px',
+              width: '100%'
             }}
           />
           <Separate  />
