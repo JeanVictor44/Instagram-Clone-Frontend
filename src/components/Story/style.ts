@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const ContainerImg = styled.div`
+
+
     img {
         width:60px;
         height:60px;
@@ -26,6 +28,25 @@ export const Container = styled.div`
     z-index: 1;
     border-radius:50%;
     display: flex;
+    
     justify-content: center;
+
     align-items: center;
+
+    
+`;
+interface ContainerProps {
+    isHorizontal: boolean
+    profileNameBold: boolean
+}
+export const Container = styled.div<ContainerProps> `
+display: flex;
+flex-direction: ${({isHorizontal}) => isHorizontal ? 'row' : 'column'};
+font-weight: ${({profileNameBold}) => profileNameBold ? 'bold' : 'normal'};
+gap:5px;
+align-items: center;
+justify-content: center;
+    span {
+        font-size:12px;
+    }
 `;
