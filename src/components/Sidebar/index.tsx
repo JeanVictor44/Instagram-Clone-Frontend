@@ -6,17 +6,17 @@ import exploreIcon from '../../assets/icons/explore.svg';
 import reelsIcon from '../../assets/icons/reels.svg';
 import messagesIcon from '../../assets/icons/messenger.svg';
 import heartIcon from '../../assets/icons/heart.svg';
-import createIcon from '../../assets/icons/create.svg';
-
+import createIcon from '../../assets/icons/new-post.svg';
+import logo from '../../assets/logo.svg';
 export function Sidebar (){
   return (
     <Container>
       <div className="container-logo-img">
-        <img src="" />
+        <img src={logo} />
       </div>
       <List>
         <li>
-          <Link to="/feed">
+          <Link to="/">
             <img src={homeIcon} alt="Feed"/>
             <span>Página Inicial</span>
           </Link>
