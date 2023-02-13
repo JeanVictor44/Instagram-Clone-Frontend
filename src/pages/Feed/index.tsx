@@ -7,7 +7,7 @@ export function Feed () {
     <Container>
       <Principal>
         <ListStories />
-        <Post profileImg="https://media.istockphoto.com/id/1368424494/photo/studio-portrait-of-a-cheerful-woman.jpg?b=1&s=170667a&w=0&k=20&c=VEE1756TeCzYH2uPsFZ_P8H3Di2j_jw8aOT6zd7V8JY=" profileName='Ramona' postTime='32 min'/>
+        <Post  likes={450} caption='Um dia de fotos e diversão sofrimento balada amor choro cagada kfjfdj fdksfkjsk jdfkjsdkfjsdkjfksdjkfjskjfksj k jfsk' postImg='https://media.istockphoto.com/id/1368424494/photo/studio-portrait-of-a-cheerful-woman.jpg?b=1&s=170667a&w=0&k=20&c=VEE1756TeCzYH2uPsFZ_P8H3Di2j_jw8aOT6zd7V8JY=  ' profileImg="https://media.istockphoto.com/id/1368424494/photo/studio-portrait-of-a-cheerful-woman.jpg?b=1&s=170667a&w=0&k=20&c=VEE1756TeCzYH2uPsFZ_P8H3Di2j_jw8aOT6zd7V8JY=" profileName='Ramona' postTime='32 min'/>
       </Principal>
 
       <RightSide>
