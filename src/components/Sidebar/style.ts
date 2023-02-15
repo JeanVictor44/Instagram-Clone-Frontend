@@ -4,7 +4,7 @@ export const Container = styled.aside `
     padding:40px 20px;
     position:fixed;
     width:100%;
-        max-width: 240px;
+    max-width: 240px;
     border-right:${({theme}) => `1px solid ${theme.colors.border}` };
     height:100vh;
     a {

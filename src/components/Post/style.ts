@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div `
+    margin-top:40px;
     .likes {
         display: block;
         font-size: 14px;

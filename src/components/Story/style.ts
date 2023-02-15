@@ -40,12 +40,11 @@ interface ContainerProps {
     profileNameBold: boolean
 }
 export const Container = styled.div<ContainerProps> `
-display: flex;
-flex-direction: ${({isHorizontal}) => isHorizontal ? 'row' : 'column'};
-font-weight: ${({profileNameBold}) => profileNameBold ? 'bold' : 'normal'};
-gap:5px;
-align-items: center;
-justify-content: center;
+    display: flex;
+    flex-direction: ${({isHorizontal}) => isHorizontal ? 'row' : 'column'};
+    font-weight: ${({profileNameBold}) => profileNameBold ? 'bold' : 'normal'};
+    gap:5px;
+    align-items: center;    
     span {
         font-size:12px;
     }
