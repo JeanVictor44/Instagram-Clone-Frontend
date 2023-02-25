@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
-export const ContainerImg = styled.div`
+interface ContainerImgProps {
+    size: number
+}
+export const ContainerImg = styled.div<ContainerImgProps>`
 
 
     img {
-        width:60px;
-        height:60px;
+        width:${({size}) => `${size}px`};
+        height:${({size}) => `${size}px`};
+        object-fit: cover;
+
         border-radius: 50%;
         border:2px solid #fff;
         
@@ -48,4 +53,20 @@ export const Container = styled.div<ContainerProps> `
     span {
         font-size:12px;
     }
+    .box-column {
+        display: flex;
+        flex-direction: column;
+        span.location {
+            font-weight: normal;
+            margin-top: 5px;
+        }
+        span.post-time {
+            font-size: 12px;
+            color:${({theme}) => theme.colors.gray};
+            display: inline-block;
+            margin-left:10px;
+        }
+        
+    }
+    
 `;

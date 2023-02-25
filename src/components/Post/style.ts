@@ -9,7 +9,8 @@ export const Container = styled.div `
     }
 `;
 
-export const Header = styled.header `
+
+export const Header = styled.header`
     display: flex;
     justify-content: space-between;
     margin-bottom:5px;
@@ -17,10 +18,7 @@ export const Header = styled.header `
         display: flex;
         align-items: center;
         gap:10px;
-        .post-time {
-            font-size: 14px;
-            color:${({theme}) => theme.colors.gray};
-        }
+        
     }
 
     button {
@@ -36,8 +34,10 @@ export const Header = styled.header `
 `;
 
 export const ContainerImage = styled.div`
+
     img {
         border-radius:4px;
+        max-width: 100%;
     }
 `;
 

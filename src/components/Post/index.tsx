@@ -6,22 +6,24 @@ import shareIcon from '../../assets/icons/share.svg';
 import saveIcon from '../../assets/icons/save.svg';
 
 interface PostProps {
-    profileName: string,
+    profileName: string
     profileImg: string
     postTime: string 
     postImg: string
     caption: string
     likes: number
+    location?: string
+
     
 }
-export function Post({profileName, postTime,profileImg, postImg, likes, caption}: PostProps){
+export function Post({profileName, postTime, profileImg, postImg, likes, caption, location}: PostProps){
   return (
     <Container>
       <Header>
         <div>
           
-          <Story profileName={profileName} profileImg={profileImg} isHorizontal={true} profileNameBold={true}/>
-          <span className="post-time"> • {postTime}</span>
+          <Story profileName={profileName} profileImg={profileImg} isHorizontal={true} profileNameBold={true} location={location} postTime={postTime} />
+          
         </div>
         
 
