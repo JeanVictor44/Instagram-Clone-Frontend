@@ -45,6 +45,7 @@ interface ContainerProps {
     profileNameBold: boolean
 }
 export const Container = styled.div<ContainerProps> `
+    cursor:pointer;
     display: flex;
     flex-direction: ${({isHorizontal}) => isHorizontal ? 'row' : 'column'};
     font-weight: ${({profileNameBold}) => profileNameBold ? 'bold' : 'normal'};

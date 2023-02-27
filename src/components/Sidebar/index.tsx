@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Container, List } from './style';
+import { Container, List, ListMoreActions } from './style';
 import homeIcon from '../../assets/icons/home.svg';
 import searchIcon from '../../assets/icons/search.svg';
 import exploreIcon from '../../assets/icons/explore.svg';
@@ -8,7 +8,38 @@ import messagesIcon from '../../assets/icons/messenger.svg';
 import heartIcon from '../../assets/icons/heart.svg';
 import createIcon from '../../assets/icons/new-post.svg';
 import logo from '../../assets/logo.svg';
+import { HiBars3BottomLeft } from 'react-icons/hi2';
+import { AiOutlineClockCircle, AiOutlineSetting} from 'react-icons/ai';
+import { BsBookmark, BsMoon} from 'react-icons/bs';
+import { GoReport } from 'react-icons/go';
+import { RefObject, useEffect, useRef, useState } from 'react';
+
 export function Sidebar (){
+  const [listMoreIsOpen, setListMoreIsOpen] = useState(false);
+  const buttonRef = useRef(null) as RefObject<HTMLButtonElement>;
+ 
+
+  function handleClickMoreActions()  {
+    setListMoreIsOpen((state) => !state);
+  }
+
+  
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent){
+      console.log('oi');
+      const elementClicked = event.target as Node;
+      if(buttonRef.current && !buttonRef.current.contains(elementClicked)){
+        setListMoreIsOpen(false);
+      }
+    } 
+
+    window.addEventListener('click',handleClickOutside,true);
+    return () => window.removeEventListener('click',handleClickOutside,true);
+  }, [buttonRef]);
+  
+
+  
   return (
     <Container>
       <div className="container-logo-img">
@@ -78,6 +109,53 @@ export function Sidebar (){
         
         </li>
       </List>
+
+      <ListMoreActions isOpen={listMoreIsOpen} className="list-more">
+        <li>
+          <Link to="/config">
+            <span>Configurações</span>
+            <AiOutlineSetting size={25}/>
+          </Link>
+        </li>
+        <li>
+          <Link to="/activity">
+            <span>Sua atividade</span>
+            <AiOutlineClockCircle size={25}/>
+          </Link>
+        </li>
+        <li>
+          <Link to="/saves">
+            <span>Salvos</span>
+            <BsBookmark size={25}/>
+          </Link>
+        </li>
+        <li>
+          <button>
+            <span>Alternar modo</span>
+            <BsMoon size={25}/>
+          </button>
+        </li>
+        <li>
+          <Link to="/reports">
+            <span>Relatar um problema</span>
+            <GoReport size={25}/>
+          </Link>
+        </li>
+        <li>
+          <Link to="/config">
+            <span>Trocar de conta</span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/config">
+            <span>Sair</span>
+          </Link>
+        </li>
+      </ListMoreActions>
+      <button className="button-more" onClick={handleClickMoreActions} ref={buttonRef}>
+        <HiBars3BottomLeft size={30}/>
+        <span>Mais</span>
+      </button>
     </Container>
   );
 }
