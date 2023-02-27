@@ -50,18 +50,17 @@ export const ListMoreActions = styled.ul<ListMoreActionsProps>`
     display:${({isOpen}) => isOpen ? 'block' : 'none'};
     width:120%;
     list-style: none;
-    margin:30px 0 0 20px;
-    filter:drop-shadow(0 0 5px rgba(0,0,0, .0975));
+    margin:30px 0 0 -10px;
+    background-color: #fff;
+    filter:drop-shadow(0 0 5px rgba(0,0,0,.0975));
 
     li + li {
-        border-top:0.5px rgb(219,219,219) solid;
-        filter:drop-shadow(0 0 5px rgba(0,0,0, .0975));
-        
-    }
-    li:hover {
-        filter:brightness(0.8);
+        border-top:0.5px rgb(219,219,219) solid;        
     }
 
+    li:hover {
+        
+    }
 
     button {
         background:transparent;
@@ -77,7 +76,6 @@ export const ListMoreActions = styled.ul<ListMoreActionsProps>`
         align-items: center;
         width: 100%;
         justify-content: space-between;
-        background: rgba(255,255,255,0.5);
     }
 `;
 export const List = styled.ul `
