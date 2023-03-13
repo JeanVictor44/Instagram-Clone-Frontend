@@ -10,6 +10,5 @@ export const light= {
     primaryTextColor: '#262626',
     secondaryTextColor:'#8e8e8e',
     border: '#DBDBDB'
-
   }
 };

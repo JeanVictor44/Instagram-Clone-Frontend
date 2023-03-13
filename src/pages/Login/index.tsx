@@ -47,18 +47,12 @@ export function Login(){
       });
     }, 5000);
 
-    // quando o componente é desmotado
     return () => clearInterval(interval);
   },[]);
   
-
-  
-
-
   if(isLoading){
     return <Loader />;
   }
-  
   
   return (
     <Container>

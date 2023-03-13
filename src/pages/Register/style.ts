@@ -15,7 +15,6 @@ export const Container = styled.div`
         
     }
     & > form {
-        min-height: 500px;
         width:340px;
         >div:first-of-type{
             margin-bottom: 20px;

@@ -4,6 +4,8 @@ export const Container = styled.footer`
 
     ul {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap:20px;
         list-style: none;
         a {

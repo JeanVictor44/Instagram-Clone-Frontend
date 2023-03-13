@@ -16,9 +16,10 @@ interface CustomThemeProviderProps {
 
 export function CustomThemeProvider({children}: CustomThemeProviderProps){
   const [theme, setTheme] = useState<Theme>(light);
+
   function toggleTheme(){
-      
   }
+
   return (
     <ThemeContext.Provider value={{
       theme,

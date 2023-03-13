@@ -94,6 +94,9 @@ export const RegisterMiniBox = styled.div`
 `;
 
 export const PhoneContainer = styled.div`
+    @media (max-width:1000px) {
+        display: none;
+    }
     position: relative;
     .screenhost{
         position:absolute;
